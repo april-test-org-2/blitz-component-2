@@ -1,0 +1,14 @@
+name: Production workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency: production
+    steps:
+      - run: echo "Deploying application..."
+      - run: echo "Application successfully deployed."
